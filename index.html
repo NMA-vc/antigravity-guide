@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antigravity.md - Master Google's Agentic IDE</title>
+    <meta name="description" content="The definitive guide to Google Antigravity: mission control for autonomous AI coding agents.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --green: #7ED957;
+            --green-dim: #6BC045;
+            --bg: #ffffff;
+            --text: #000000;
+            --text-light: #666666;
+            --border: #e5e5e5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        header {
+            margin-bottom: 4rem;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 3rem;
+            color: var(--text);
+        }
+
+        .logo a {
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 300;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.03em;
+        }
+
+        h1 strong {
+            font-weight: 600;
+            color: var(--green);
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            font-weight: 300;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: 300;
+            margin: 5rem 0 2rem 0;
+            letter-spacing: -0.02em;
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin: 3rem 0 1rem 0;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            color: var(--text);
+            line-height: 1.8;
+        }
+
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1px;
+            background: var(--border);
+            border: 1px solid var(--border);
+            margin: 3rem 0;
+        }
+
+        .nav-item {
+            background: var(--bg);
+            padding: 2rem;
+            text-decoration: none;
+            color: var(--text);
+            transition: background 0.2s;
+        }
+
+        .nav-item:hover {
+            background: #fafafa;
+        }
+
+        .nav-item-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .nav-item-desc {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            line-height: 1.5;
+        }
+
+        .concept-box {
+            background: #fafafa;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-left: 3px solid var(--green);
+        }
+
+        .concept-box h4 {
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        code {
+            font-family: 'SF Mono', Monaco, 'Courier New', monospace;
+            background: #f5f5f5;
+            padding: 0.2rem 0.5rem;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+
+        pre {
+            background: #f5f5f5;
+            padding: 1.5rem;
+            overflow-x: auto;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+
+        pre code {
+            background: none;
+            padding: 0;
+        }
+
+        ul, ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.75rem;
+            color: var(--text);
+        }
+
+        a {
+            color: var(--green);
+            text-decoration: none;
+            border-bottom: 1px solid var(--green);
+            transition: opacity 0.2s;
+        }
+
+        a:hover {
+            opacity: 0.7;
+        }
+
+        .section {
+            margin-bottom: 5rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+        }
+
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            font-weight: 600;
+        }
+
+        footer {
+            margin-top: 6rem;
+            padding-top: 3rem;
+            border-top: 1px solid var(--border);
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        footer a {
+            color: var(--text-light);
+            border-bottom-color: var(--text-light);
+        }
+
+        .tip {
+            background: #f0fff0;
+            border-left: 3px solid var(--green);
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .tip strong {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--green-dim);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 2rem 1.5rem;
+            }
+            h1 {
+                font-size: 2.5rem;
+            }
+            h2 {
+                font-size: 1.75rem;
+            }
+            .nav-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo"><a href="https://nma.vc">NMA.vc</a></div>
+            <h1><strong>Antigravity</strong> is mission control for autonomous coding agents.</h1>
+            <p class="subtitle">Google's agent-first IDE fundamentally reimagines software development. You don't write code line-by-line anymore. You orchestrate agents that execute tasks asynchronously.</p>
+        </header>
+
+        <div class="nav-grid">
+            <a href="#paradigm" class="nav-item">
+                <span class="nav-item-title">The Paradigm</span>
+                <span class="nav-item-desc">Why Antigravity is different</span>
+            </a>
+            <a href="#config" class="nav-item">
+                <span class="nav-item-title">Configuration</span>
+                <span class="nav-item-desc">GEMINI.md vs AGENTS.md</span>
+            </a>
+            <a href="#swarm" class="nav-item">
+                <span class="nav-item-title">Swarm Development</span>
+                <span class="nav-item-desc">Parallel agent orchestration</span>
+            </a>
+            <a href="#mcp" class="nav-item">
+                <span class="nav-item-title">MCP Integration</span>
+                <span class="nav-item-desc">External system connections</span>
+            </a>
+            <a href="#skills" class="nav-item">
+                <span class="nav-item-title">Skills</span>
+                <span class="nav-item-desc">Codifying best practices</span>
+            </a>
+            <a href="#workflows" class="nav-item">
+                <span class="nav-item-title">Production</span>
+                <span class="nav-item-desc">Real-world workflows</span>
+            </a>
+        </div>
+
+        <section id="paradigm" class="section">
+            <h2>The agent-first paradigm</h2>
+            
+            <p>Traditional IDEs treat AI as a copilot—smart autocomplete waiting for your keystrokes. Antigravity inverts this. <strong>Agents are autonomous actors</strong> that receive objectives and execute them asynchronously.</p>
+
+            <p>Your role shifts from writer to architect. From debugger to orchestrator.</p>
+
+            <h3>Mission Control vs Text Editor</h3>
+            <table>
+                <tr>
+                    <th>Traditional IDE (<a href="https://www.cursor.com/">Cursor</a>, <a href="https://code.visualstudio.com/">VS Code</a>)</th>
+                    <th>Antigravity</th>
+                </tr>
+                <tr>
+                    <td>You write every line</td>
+                    <td>Agents execute tasks</td>
+                </tr>
+                <tr>
+                    <td>Blocking operations</td>
+                    <td>Parallel swarms</td>
+                </tr>
+                <tr>
+                    <td>File-centric</td>
+                    <td>Agent-centric</td>
+                </tr>
+                <tr>
+                    <td>Linear workflow</td>
+                    <td>Async orchestration</td>
+                </tr>
+            </table>
+
+            <h3>Core concepts</h3>
+            <p><strong>Agent Manager:</strong> Your command center. Visualize status, manage concurrent tasks, review artifacts.</p>
+            <p><strong>Vibe Coding:</strong> Highlight code, give natural language directives, watch agents iterate.</p>
+            <p><strong>Asynchronous Execution:</strong> Debug in background while planning architecture.</p>
+            <p><strong>Artifacts:</strong> Implementation plans, test results, runtime recordings for review.</p>
+
+            <div class="tip">
+                <strong>Mindset shift</strong>
+                You're no longer optimizing keystrokes. You're optimizing agent orchestration.
+            </div>
+        </section>
+
+        <section id="config" class="section">
+            <h2>Configuration deep dive</h2>
+
+            <h3>GEMINI.md vs AGENTS.md</h3>
+            <p>Two files, different purposes. Understanding the hierarchy is critical.</p>
+
+            <div class="concept-box">
+                <h4>GEMINI.md (Antigravity-native)</h4>
+                <p><strong>Location:</strong> Project root or <code>.gemini/</code></p>
+                <p><strong>Purpose:</strong> Antigravity-specific config for Gemini model</p>
+                <pre><code># GEMINI.md
+
+## Project Context
+Next.js 14 e-commerce with Prisma/PostgreSQL
+
+## Standards
+- TypeScript strict mode
+- All API routes need error boundaries
+- Prefer server components
+
+## Constraints
+- No direct DB queries in components
+- Use tRPC for type-safe APIs</code></pre>
+            </div>
+
+            <div class="concept-box">
+                <h4>AGENTS.md (Universal standard)</h4>
+                <p><strong>Location:</strong> Project root</p>
+                <p><strong>Purpose:</strong> Cross-platform agent instructions</p>
+                <p><strong>Priority:</strong> If both exist, AGENTS.md typically wins</p>
+                <pre><code># AGENTS.md
+
+## Role
+Expert full-stack TypeScript developer
+
+## Critical Rules
+1. Never modify DB schema without approval
+2. All mutations wrapped in transactions
+3. Generate tests for every API route
+
+## Preferences
+- Tailwind for styling
+- Zod for validation</code></pre>
+            </div>
+
+            <p><strong>Configuration priority:</strong> AGENTS.md → GEMINI.md → Built-in defaults</p>
+            <p>Most developers use AGENTS.md for portability across tools.</p>
+        </section>
+
+        <section id="swarm" class="section">
+            <h2>Swarm development</h2>
+            
+            <p>The killer feature: multiple specialized agents working simultaneously.</p>
+
+            <h3>Typical swarm pattern</h3>
+            <pre><code>Agent 1: "Refactor auth to support OAuth2"
+├─ Status: Executing
+├─ Progress: Updating middleware (60%)
+└─ ETA: 4 minutes
+
+Agent 2: "Generate E2E tests for checkout"
+├─ Status: Waiting for approval
+├─ Artifact: test-plan.md
+└─ Dependencies: None
+
+Agent 3: "Debug memory leak in webhooks"
+├─ Status: Investigating
+└─ Current: Analyzing heap snapshots</code></pre>
+
+            <h3>Best practices</h3>
+            <ol>
+                <li><strong>Isolate domains:</strong> Agents work on orthogonal modules to avoid conflicts</li>
+                <li><strong>Set boundaries:</strong> Define in AGENTS.md which files each agent can modify</li>
+                <li><strong>Staged rollout:</strong> Start with 2-3 agents, scale as you learn</li>
+                <li><strong>Human checkpoints:</strong> Require approval for migrations and integrations</li>
+            </ol>
+
+            <div class="tip">
+                <strong>Pro tip</strong>
+                Use one "manager agent" to coordinate others. Give it high-level objectives, let it delegate.
+            </div>
+        </section>
+
+        <section id="mcp" class="section">
+            <h2>Model Context Protocol</h2>
+            
+            <p>MCP connects agents to external systems beyond local files.</p>
+
+            <h3>Popular MCP servers</h3>
+            <ul>
+                <li><strong><a href="https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem">Filesystem</a>:</strong> Read/write project files</li>
+                <li><strong><a href="https://github.com/modelcontextprotocol/servers/tree/main/src/postgres">Database</a>:</strong> Query <a href="https://www.postgresql.org/">Postgres</a>, <a href="https://www.mysql.com/">MySQL</a>, <a href="https://www.mongodb.com/">MongoDB</a></li>
+                <li><strong><a href="https://github.com/modelcontextprotocol/servers/tree/main/src/git">Git</a>:</strong> Commit, branch, merge operations</li>
+                <li><strong><a href="https://github.com/modelcontextprotocol/servers/tree/main/src/slack">Slack</a>:</strong> Post updates, read channels</li>
+                <li><strong><a href="https://github.com/modelcontextprotocol/servers/tree/main/src/linear">Linear</a>:</strong> Create tickets, update statuses</li>
+                <li><strong><a href="https://github.com/modelcontextprotocol/servers/tree/main/src/brave-search">Web Search</a>:</strong> Research docs and Stack Overflow</li>
+            </ul>
+
+            <h3>Configuration example</h3>
+            <pre><code>{
+  "mcpServers": {
+    "postgres": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-postgres"],
+      "env": { "DATABASE_URL": "postgresql://..." }
+    },
+    "github": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": { "GITHUB_TOKEN": "ghp_..." }
+    }
+  }
+}</code></pre>
+
+            <p><strong>Security:</strong> MCP servers run with your credentials. Use read-only tokens where possible. See <a href="https://guardrails.md">guardrails.md</a> for safety patterns.</p>
+        </section>
+
+        <section id="skills" class="section">
+            <h2>Skills architecture</h2>
+            
+            <p>Skills are reusable procedural knowledge. Instead of telling every agent how to handle errors, create a skill that encapsulates the pattern.</p>
+
+            <h3>Structure</h3>
+            <pre><code>.claude/skills/error-handling/
+├── SKILL.md
+├── examples/
+│   ├── api-route.ts
+│   └── component.tsx
+└── tests/</code></pre>
+
+            <h3>Discovery</h3>
+            <p>Agents scan for skills in:</p>
+            <ul>
+                <li><code>.claude/skills/</code> (project-specific)</li>
+                <li><code>~/.config/claude/skills/</code> (global)</li>
+                <li>Public repositories like <a href="https://github.com/sickn33/antigravity-awesome-skills">antigravity-awesome-skills</a></li>
+            </ul>
+
+            <div class="tip">
+                <strong>Meta skill</strong>
+                Create a "skill-writer" skill that teaches agents how to create new skills.
+            </div>
+        </section>
+
+        <section id="workflows" class="section">
+            <h2>Production workflows</h2>
+
+            <h3>NotebookLM + Antigravity pipeline</h3>
+            <ol>
+                <li><strong>Research (<a href="https://notebooklm.google.com/">NotebookLM</a>):</strong> Feed requirements and docs, generate implementation plan</li>
+                <li><strong>Review:</strong> Export plan as structured document</li>
+                <li><strong>Orchestrate (Antigravity):</strong> Import plan, assign tasks to specialized agents</li>
+                <li><strong>Iterate:</strong> Agents execute, you review, approve, loop continues</li>
+            </ol>
+
+            <h3>Common patterns</h3>
+            <p><strong>Test-driven development:</strong></p>
+            <pre><code>Agent A: Write E2E tests from requirements
+Agent B: Implement until tests pass
+Agent C: Refactor for performance</code></pre>
+
+            <p><strong>Parallel features:</strong></p>
+            <pre><code>Agent 1 (feature/auth): OAuth2
+Agent 2 (feature/payments): Stripe
+Agent 3 (feature/admin): Dashboard
+// You orchestrate merges</code></pre>
+
+            <h3>Troubleshooting</h3>
+            <p><strong>Agent stuck in loop:</strong> Check GUARDRAILS.md to prevent repeated failures</p>
+            <p><strong>Merge conflicts:</strong> Better domain isolation via <code>@workspace_scope</code></p>
+            <p><strong>Slow performance:</strong> Reduce MCP servers, use lazy-loading gateways</p>
+            <p><strong>Context pollution:</strong> Force context reset, use GUARDRAILS.md for failure patterns</p>
+        </section>
+
+        <section class="section">
+            <h2>Resources</h2>
+            <ul>
+                <li><a href="https://antigravity.google/">Official Antigravity</a></li>
+                <li><a href="https://antigravity.google/docs">Antigravity Documentation</a></li>
+                <li><a href="https://guardrails.md">Guardrails.md</a> — Safety patterns</li>
+                <li><a href="https://agents.md">AGENTS.md Spec</a> — Universal standard</li>
+                <li><a href="https://modelcontextprotocol.io/">Model Context Protocol</a> — MCP documentation</li>
+                <li><a href="https://github.com/modelcontextprotocol/servers">MCP Servers</a> — Official server implementations</li>
+                <li><a href="https://github.com/sickn33/antigravity-awesome-skills">Awesome Skills</a> — Community skill collection</li>
+            </ul>
+        </section>
+
+        <footer>
+            <p>Curated by <a href="https://nma.vc">NMA.vc</a> — Not affiliated with Google</p>
+            <p style="margin-top: 1rem;">Community resource for Antigravity users</p>
+        </footer>
+    </div>
+</body>
+</html>
