@@ -1,0 +1,88 @@
+# Antigravity.md
+
+> The definitive guide to Google Antigravity: mission control for autonomous AI coding agents.
+
+## Overview
+
+Google Antigravity is an AI-powered IDE that fundamentally reimagines software development from line-by-line coding to agent orchestration. Instead of being a text editor with AI assistance, it's a mission control center where you manage autonomous agents that execute tasks asynchronously.
+
+## Key Concepts
+
+### Agent-First Development
+Traditional IDEs (Cursor, VS Code Copilot) are "editor-centric" - they wait for keystrokes and offer suggestions. Antigravity is "agent-centric" - you give high-level objectives to autonomous agents that work independently while you focus on architecture.
+
+### Swarm Development
+Multiple specialized agents work in parallel: one refactors authentication, another writes E2E tests, a third debugs memory leaks - all simultaneously. You orchestrate and approve their work.
+
+### Configuration: GEMINI.md vs AGENTS.md
+- **GEMINI.md**: Antigravity-native configuration for the Gemini model
+- **AGENTS.md**: Universal standard that works across tools (Cursor, Windsurf, etc.)
+- Priority: AGENTS.md → GEMINI.md → Built-in defaults
+- Most developers use AGENTS.md for portability
+
+### Model Context Protocol (MCP)
+MCP connects agents to external systems: databases (Postgres, MySQL, MongoDB), Git, Slack, Linear, and APIs. Extends agents beyond local file access to interact with your entire development ecosystem.
+
+### Skills Architecture
+Reusable procedural knowledge packages that teach agents specific tasks. Instead of explaining error handling to every agent, create a SKILL.md that encapsulates the pattern.
+
+Skills are discovered in:
+- `.claude/skills/` (project-specific)
+- `~/.config/claude/skills/` (global)
+- Public repositories
+
+### Production Workflows
+
+**NotebookLM + Antigravity Pipeline:**
+1. Research phase (NotebookLM): Feed requirements and docs, generate implementation plan
+2. Review: Export plan as structured document
+3. Orchestrate (Antigravity): Import plan, assign tasks to specialized agents
+4. Iterate: Agents execute, you review, approve, loop continues
+
+## When to Use Antigravity
+
+- Multi-module projects requiring parallel development
+- Greenfield projects and rapid prototyping
+- Teams comfortable with agent orchestration workflows
+- Projects with clear boundaries between components
+
+## Safety Considerations
+
+Implement proper guardrails (see guardrails.md):
+- Clear instructions in AGENTS.md
+- Approval workflows for destructive operations
+- GUARDRAILS.md to capture learned constraints
+- Isolated agent domains to prevent conflicts
+- Human checkpoints for critical paths
+
+## Common Patterns
+
+**Test-Driven Agent Development:**
+- Agent A: Write comprehensive E2E tests from requirements
+- Agent B: Implement features until tests pass
+- Agent C: Refactor for performance while maintaining green tests
+
+**Parallel Feature Development:**
+- Agent 1 (feature/auth): OAuth2 implementation
+- Agent 2 (feature/payments): Stripe integration
+- Agent 3 (feature/admin): Admin dashboard
+- You orchestrate merges after reviewing artifacts
+
+## Troubleshooting
+
+- **Agent stuck in loop**: Check GUARDRAILS.md to prevent repeated failures
+- **Merge conflicts**: Better domain isolation via `@workspace_scope` directives
+- **Slow performance**: Reduce MCP server count, use lazy-loading gateways
+- **Context pollution**: Force context reset, use GUARDRAILS.md for failure patterns
+
+## Related Resources
+
+- Official site: https://antigravity.google/
+- Documentation: https://antigravity.google/docs
+- Safety protocols: https://guardrails.md
+- AGENTS.md spec: https://agents.md
+- MCP documentation: https://modelcontextprotocol.io/
+
+---
+
+Curated by NMA.vc | https://nma.vc
