@@ -82,6 +82,7 @@ Implement proper guardrails (see guardrails.md):
 - Safety protocols: https://guardrails.md
 - AGENTS.md spec: https://agents.md
 - MCP documentation: https://modelcontextprotocol.io/
+- Why AGENTS.md matters more than Skills (Vercel): https://jpcaparas.medium.com/vercel-says-agents-md-matters-more-than-skills-should-we-listen-d83d7dc2d978
 
 ---
 
